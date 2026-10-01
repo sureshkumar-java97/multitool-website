@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import {
-  BrowserRouter,
+  HashRouter,
   Link,
   Route,
   Routes,
@@ -837,9 +837,9 @@ function FeedbackPage() {
 export default function Root() {
   return (
     <AppErrorBoundary>
-      <BrowserRouter>
-        <AppShell />
-      </BrowserRouter>
-    </AppErrorBoundary>
+  <HashRouter>
+    <AppShell />
+  </HashRouter>
+</AppErrorBoundary>
   );
 }
