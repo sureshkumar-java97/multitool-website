@@ -1,0 +1,178 @@
+.numeric-tool {
+  width: 100%;
+  padding: clamp(16px, 3vw, 24px);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+.numeric-fields {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 13px;
+}
+.numeric-fields label,
+.numeric-subjects label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+}
+.numeric-fields input,
+.numeric-fields select,
+.numeric-subjects input {
+  width: 100%;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.numeric-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.numeric-actions .primary,
+.numeric-actions .secondary,
+.numeric-result > .secondary {
+  font-size: 11px;
+  padding: 9px 12px;
+}
+.numeric-result {
+  margin-top: 18px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: color-mix(in srgb, var(--accent2) 45%, var(--surface));
+}
+.numeric-result .eyebrow {
+  margin: 0 0 5px;
+}
+.numeric-result output {
+  display: block;
+  color: var(--accent);
+  font-size: clamp(36px, 6vw, 48px);
+  line-height: 1.2;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.numeric-result pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 12px 0;
+  font:
+    11px/1.7 ui-monospace,
+    monospace;
+  color: var(--muted);
+}
+.numeric-subjects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 11px;
+}
+.numeric-label {
+  grid-column: 1/-1;
+  font-size: 13px;
+  font-weight: 700;
+}
+.add-subject {
+  align-self: end;
+  justify-self: start;
+  font-size: 10px;
+  padding: 9px;
+}
+.numeric-tool button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Large, familiar calculator keys stay easy to tap on both phones and desktop. */
+.number-pad {
+  max-width: 440px;
+  margin-top: 18px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--bg) 78%, var(--surface));
+}
+.number-pad-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+.number-pad-title span {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+.number-pad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(44px, 1fr));
+  gap: 8px;
+}
+.number-pad-grid button {
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    border-color 120ms ease;
+}
+.number-pad-grid button:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent2) 65%, var(--surface));
+}
+.number-pad-grid button:active {
+  transform: scale(0.97);
+}
+.number-pad-grid button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.number-pad-grid .number-pad-clear {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+.date-keypad-preview {
+  display: block;
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 19px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 520px) {
+  .number-pad {
+    max-width: none;
+  }
+  .number-pad-grid {
+    gap: 6px;
+  }
+  .number-pad-grid button {
+    min-height: 50px;
+  }
+}

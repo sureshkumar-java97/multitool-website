@@ -1,0 +1,173 @@
+.currency-tool {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+.currency-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto 1fr;
+  align-items: end;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.currency-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.currency-fields input,
+.currency-fields select {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.currency-swap {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--accent2);
+  color: var(--accent);
+  cursor: pointer;
+}
+.currency-tool > .primary {
+  font-size: 12px;
+}
+.currency-tool > .primary:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.currency-result {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 16px 0 0;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg);
+  font:
+    12px/1.8 ui-monospace,
+    monospace;
+}
+.currency-answer {
+  margin: 12px 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--accent2) 45%, var(--surface));
+  color: var(--accent);
+  font-size: clamp(36px, 6vw, 48px);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.currency-answer output {
+  display: block;
+}
+.currency-note {
+  color: var(--muted);
+  font-size: 10px;
+  margin: 14px 0 0;
+}
+@media (max-width: 620px) {
+  .currency-tool {
+    padding: 14px;
+  }
+  .currency-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .currency-swap {
+    grid-column: 1/-1;
+    justify-self: center;
+    transform: rotate(90deg);
+  }
+  .currency-fields label:nth-of-type(3) {
+    grid-column: 1/-1;
+  }
+}
+
+/* Keep the currency keypad consistent with the calculators and easy to tap. */
+.currency-pad {
+  max-width: 440px;
+  margin: 16px 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--bg) 78%, var(--surface));
+}
+.currency-pad-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 700;
+}
+.currency-pad-heading span {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+.currency-pad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(44px, 1fr));
+  gap: 8px;
+}
+.currency-pad-grid button {
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  touch-action: manipulation;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    background 120ms ease,
+    border-color 120ms ease;
+}
+.currency-pad-grid button:hover {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent2) 65%, var(--surface));
+}
+.currency-pad-grid button:active {
+  transform: scale(0.97);
+}
+.currency-pad-grid button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.currency-pad-grid .currency-pad-clear {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 520px) {
+  .currency-pad {
+    max-width: none;
+  }
+  .currency-pad-grid {
+    gap: 6px;
+  }
+  .currency-pad-grid button {
+    min-height: 50px;
+  }
+}

@@ -1,0 +1,160 @@
+.student-widget {
+  width: 100%;
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--surface) 86%, transparent);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+}
+.timer-display {
+  text-align: center;
+  font-size: clamp(54px, 12vw, 84px);
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -3px;
+  color: var(--accent);
+}
+.student-widget > .eyebrow {
+  text-align: center;
+  margin: 0 0 9px;
+}
+.student-widget > .muted {
+  text-align: center;
+  font-size: 11px;
+}
+.timer-presets {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 19px 0;
+}
+.timer-presets button,
+.timer-presets label {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  padding: 8px 10px;
+  font-size: 10px;
+}
+.timer-presets button {
+  cursor: pointer;
+}
+.timer-presets label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.timer-presets input {
+  width: 48px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 4px;
+  background: var(--bg);
+  color: var(--ink);
+}
+.timer-actions {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.timer-actions .primary,
+.timer-actions .secondary {
+  font-size: 11px;
+  padding: 10px 15px;
+}
+.countdown-label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+.countdown-label input {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--ink);
+  padding: 10px;
+}
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 9px;
+  margin: 20px 0;
+}
+.countdown-grid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 13px 5px;
+  background: var(--accent2);
+  border-radius: 7px;
+  color: var(--accent);
+}
+.countdown-grid strong {
+  font-size: 25px;
+  font-weight: 550;
+  font-variant-numeric: tabular-nums;
+}
+.countdown-grid span {
+  font-size: 10px;
+}
+.student-widget > .form-note {
+  text-align: center;
+}
+
+.timer-number-pad {
+  max-width: 360px;
+  margin: 0 auto 18px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--bg) 78%, var(--surface));
+}
+.timer-number-pad-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.timer-number-pad-heading span {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: right;
+}
+.timer-number-pad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(44px, 1fr));
+  gap: 8px;
+}
+.timer-number-pad-grid button {
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
+  font-size: 22px;
+  font-weight: 700;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+.timer-number-pad-grid button:hover {
+  border-color: var(--accent);
+  background: var(--accent2);
+}
+.timer-number-pad-grid button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.timer-number-pad-grid .timer-number-pad-clear {
+  color: var(--accent);
+  font-size: 14px;
+}
