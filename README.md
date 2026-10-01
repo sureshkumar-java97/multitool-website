@@ -1,3 +1,4 @@
+
 # MultiTool
 
 A responsive utility website built with React, Vite, React Router, and Lucide. The catalogue includes calculators, converters, developer tools, text and design helpers, career checks, student tools, and everyday planners.
@@ -42,3 +43,5 @@ A responsive utility website built with React, Vite, React Router, and Lucide. T
 ## Privacy notes
 
 Local transformations stay in the current browser session. Currency requests send currency codes to Frankfurter. Weather requests send the coordinates from the browser's location permission to Open-Meteo. API Request Builder sends the configured HTTP request to the URL the user enters.
+
+
